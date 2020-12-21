@@ -16,11 +16,9 @@ int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 {
 	int i = 0;
 	instruction_t instructions[] = {
-		{"template", template},
-		{"pall", _pall},
-		{"pint", _pint},
-		{"pop", _pop},
-		{"swap", _swap},
+		{"template", template}, {"pall", _pall}, {"pint", _pint},
+		{"pop", _pop}, {"swap", _swap}, {"add", _add}, {"nop", _nop},
+		{"sub", _sub}, {"div", _div}, {"mul", _mul}, {"mod", _mod},
 		{NULL, NULL}
 	};
 

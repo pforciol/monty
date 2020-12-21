@@ -64,3 +64,39 @@ void free_args(char **args)
 		i++;
 	}
 }
+
+void _math(stack_t **stack, char op)
+{
+	int res = 0;
+	stack_t *tmp;
+
+	if (op == '+')
+		res = (*stack)->n + (*stack)->next->n;
+	else if (op == '-')
+		res = (*stack)->next->n - (*stack)->n;
+	else if (op == '/')
+	{
+		if ((*stack)->n == 0)
+			META.error = 1;
+		else
+			res = (*stack)->next->n / (*stack)->n;
+	}
+	else if (op == '*')
+		res = (*stack)->n * (*stack)->next->n;
+	else if (op == '%')
+	{
+		if ((*stack)->n == 0)
+			META.error = 1;
+		else
+			res = (*stack)->next->n % (*stack)->n;
+	}
+	
+	if (META.error == 1)
+		return;
+
+	(*stack)->next->n = res;
+	tmp = (*stack)->next;
+	tmp->prev = NULL;
+	free(*stack);
+	*stack = tmp;
+}

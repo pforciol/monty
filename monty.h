@@ -66,12 +66,18 @@ void _pall(stack_t **stack, unsigned int line_nb);
 void _pint(stack_t **stack, unsigned int line_nb);
 void _pop(stack_t **stack, unsigned int line_nb);
 void _swap(stack_t **stack, unsigned int line_nb);
+void _add(stack_t **stack, unsigned int line_nb);
+void _nop(stack_t **stack, unsigned int line_nb);
+void _sub(stack_t **stack, unsigned int line_nb);
+void _div(stack_t **stack, unsigned int line_nb);
+void _mul(stack_t **stack, unsigned int line_nb);
+void _mod(stack_t **stack, unsigned int line_nb);
 
 
 /* UTILS */
 int handle_input(int argc, char **argv, FILE **fd);
 char **handle_line(char *line);
-void free_args(char **args);
+void _math(stack_t **stack, char op);
 
 /* DEBUG */
 void debug(char **args, int line_nb);
