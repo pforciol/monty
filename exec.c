@@ -19,6 +19,7 @@ int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 		{"template", template}, {"pall", _pall}, {"pint", _pint},
 		{"pop", _pop}, {"swap", _swap}, {"add", _add}, {"nop", _nop},
 		{"sub", _sub}, {"div", _div}, {"mul", _mul}, {"mod", _mod},
+		{"pchar", _pchar}, {"pstr", _pstr},
 		{NULL, NULL}
 	};
 
@@ -59,7 +60,7 @@ int monty_run(FILE *fp)
 	char *line = NULL;
 	char **args = NULL;
 	size_t len = 0;
-	unsigned int line_nb = 0;
+	unsigned int line_nb = 1;
 
 	stack_t *stack = NULL;
 

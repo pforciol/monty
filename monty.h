@@ -72,6 +72,9 @@ void _sub(stack_t **stack, unsigned int line_nb);
 void _div(stack_t **stack, unsigned int line_nb);
 void _mul(stack_t **stack, unsigned int line_nb);
 void _mod(stack_t **stack, unsigned int line_nb);
+void _pchar(stack_t **stack, unsigned int line_nb);
+void _pstr(stack_t **stack, unsigned int line_nb);
+
 
 
 /* UTILS */
