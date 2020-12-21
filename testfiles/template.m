@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 template
-=======
-template
->>>>>>> thibaud
