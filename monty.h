@@ -62,6 +62,7 @@ int monty_run(FILE *fp);
 
 /* OPCODES */
 void _push(stack_t **stack, unsigned int line_nb, char *a_value);
+void _pall(stack_t **stack, unsigned int line_nb);
 
 /* UTILS */
 int handle_input(int argc, char **argv, FILE **fd);

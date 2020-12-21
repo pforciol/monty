@@ -5,6 +5,7 @@ int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 	int i = 0;
 	instruction_t instructions[] = {
 		{"template", template},
+		{"pall", _pall},
 		{NULL, NULL}
 	};
 
