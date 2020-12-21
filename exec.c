@@ -19,6 +19,8 @@ int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 		{"template", template},
 		{"pall", _pall},
 		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
 		{NULL, NULL}
 	};
 
