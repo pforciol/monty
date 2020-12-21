@@ -15,13 +15,13 @@ void _pint(stack_t **stack, unsigned int line_nb)
 
 void _pall(stack_t **stack, unsigned int line_nb)
 {
-    (void)line_nb;
+    stack_t *cur = *stack;
+	(void)line_nb;
 
-
-    while (*stack)
+    while (cur)
     {
-        printf("%d\n", (*stack)->n);
-        *stack = (*stack)->next;
+        printf("%d\n", cur->n);
+        cur = cur->next;
     }
 
 	META.error = 0;
