@@ -6,6 +6,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
+
+#define STACK 0
+#define QUEUE 1
 
 /**
  * struct meta_s - structure containing the error status and state of the stack
@@ -55,6 +59,9 @@ meta_t META;
 
 /* EXEC */
 int monty_run(FILE *fp);
+
+/* OPCODES */
+void _push(stack_t **stack, unsigned int line_nb, char *a_value);
 
 /* UTILS */
 int handle_input(int argc, char **argv, FILE **fd);
