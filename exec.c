@@ -37,9 +37,14 @@ int monty_run(FILE *fp)
 		args = handle_line(line);
 		/* debug(args, line_nb); */
 		if (args[0] && monty_dispatch(args, stack, line_nb) == EXIT_FAILURE)
+		{
+			free(args);
+			free(line);
 			return (EXIT_FAILURE);
+		}
+		free(args);
 		line_nb++;
 	}
-
+	free(line);
 	return (EXIT_SUCCESS);
 }

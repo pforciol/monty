@@ -59,6 +59,7 @@ int monty_run(FILE *fp);
 /* UTILS */
 int handle_input(int argc, char **argv, FILE **fd);
 char **handle_line(char *line);
+void free_args(char **args);
 
 /* DEBUG */
 void debug(char **args, int line_nb);

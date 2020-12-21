@@ -13,11 +13,11 @@ int main(int argc, char **argv)
 	FILE *fp;
 	META.error = 0;
 
-	if (handle_input(argc, argv, &fp) == EXIT_FAILURE)
+	if (handle_input(argc, argv, &fp) == 1 || monty_run(fp) == 1)
+	{
+		fclose(fp);
 		exit(EXIT_FAILURE);
-	
-	if (monty_run(fp) == EXIT_FAILURE)
-		exit(EXIT_FAILURE);
+	}
 	
 	fclose(fp);
 	return (EXIT_SUCCESS);

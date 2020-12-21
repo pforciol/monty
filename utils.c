@@ -42,6 +42,7 @@ char **handle_line(char *line)
 		}
 		i++;
 	}
+	printf("wc = %d\n", wc);
 	
 	args = malloc(sizeof(char *) * (wc + 1));
 	if (!args)
@@ -52,4 +53,15 @@ char **handle_line(char *line)
 		i++;
 
 	return (args);
+}
+
+void free_args(char **args)
+{
+	int i = 0;
+
+	while (args[i])
+	{
+		free(args[i]);
+		i++;
+	}
 }
