@@ -11,7 +11,7 @@
 int main(int argc, char **argv)
 {
 	FILE *fp;
-	ERROR = 0;
+	META.error = 0;
 
 	if (handle_input(argc, argv, &fp) == EXIT_FAILURE)
 		exit(EXIT_FAILURE);

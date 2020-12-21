@@ -7,7 +7,17 @@
 #include <unistd.h>
 #include <string.h>
 
-int ERROR;
+/**
+ * struct meta_s - structure containing the error status and state of the stack
+ * @error: the error value (0 if no, 1 if yes)
+ * @state: QUEUE or STACK
+ */
+
+typedef struct meta_s
+{
+	int error;
+	int state;
+} meta_t;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -21,9 +31,9 @@ int ERROR;
 
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+		int n;
+		struct stack_s *prev;
+		struct stack_s *next;
 } stack_t;
 
 /**
@@ -37,9 +47,11 @@ typedef struct stack_s
 
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+		char *opcode;
+		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+meta_t META;
 
 /* EXEC */
 int monty_run(FILE *fp);
