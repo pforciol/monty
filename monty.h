@@ -74,8 +74,12 @@ void _mul(stack_t **stack, unsigned int line_nb);
 void _mod(stack_t **stack, unsigned int line_nb);
 void _pchar(stack_t **stack, unsigned int line_nb);
 void _pstr(stack_t **stack, unsigned int line_nb);
+void _rotl(stack_t **stack, unsigned int line_nb);
+void _rotr(stack_t **stack, unsigned int line_nb);
 
-
+/* OP_PUSH */
+stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
 
 /* UTILS */
 int handle_input(int argc, char **argv, FILE **fd);

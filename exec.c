@@ -19,7 +19,7 @@ int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 		{"template", template}, {"pall", _pall}, {"pint", _pint},
 		{"pop", _pop}, {"swap", _swap}, {"add", _add}, {"nop", _nop},
 		{"sub", _sub}, {"div", _div}, {"mul", _mul}, {"mod", _mod},
-		{"pchar", _pchar}, {"pstr", _pstr},
+		{"pchar", _pchar}, {"pstr", _pstr}, {"rotl", _rotl}, {"rotr", _rotr},
 		{NULL, NULL}
 	};
 
@@ -50,7 +50,7 @@ int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_nb + 1, args[0]);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_nb, args[0]);
 	META.error = 1;
 	return (EXIT_FAILURE);
 }
