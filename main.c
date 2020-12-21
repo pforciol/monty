@@ -12,6 +12,7 @@ int main(int argc, char **argv)
 {
 	FILE *fp;
 	META.error = 0;
+	META.state = STACK;
 
 	if (handle_input(argc, argv, &fp) == 1 || monty_run(fp) == 1)
 	{

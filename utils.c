@@ -42,7 +42,6 @@ char **handle_line(char *line)
 		}
 		i++;
 	}
-	printf("wc = %d\n", wc);
 	
 	args = malloc(sizeof(char *) * (wc + 1));
 	if (!args)
