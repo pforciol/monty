@@ -19,6 +19,6 @@
     <<-                 Back to c1 and decrement c1
 ]                       Loop
 
->>>>++++++              At c3 add 6             
-[<++++++++>-]           While c3 above 0 increment c2 8 times and decrement c3 (this turns c2 back to ASCII from int)
-<.                      Back to c2 and print
+>>>>++++++              Forward to c4 add 6             
+[<++++++++>-]           While c4 above 0 increment c3 8 times and decrement c3 (this turns c3 back to ASCII from int)
+<.                      Back to c3 and print
