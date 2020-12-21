@@ -13,12 +13,12 @@ int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 		if (strcmp(args[0], instructions[i].opcode) == 0)
 		{
 			instructions[i].f(stack, line_nb);
-			return (ERROR);
+			return (META.error);
 		}
 		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_nb + 1, args[0]);
-	ERROR = 1;
+	META.error = 1;
 	return (EXIT_FAILURE);
 }
 
