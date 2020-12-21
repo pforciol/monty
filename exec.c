@@ -65,10 +65,10 @@ int monty_run(FILE *fp)
 
 	while (getline(&line, &len, fp) != -1)
 	{
-		/* printf("line = %d\n", line_nb + 1); */
 		args = handle_line(line);
-		/* debug(args, line_nb); */
-		if (args[0] && monty_dispatch(args, &stack, line_nb) == EXIT_FAILURE)
+		if (args[0] && args[0][0] == '#')
+			;
+		else if (args[0] && monty_dispatch(args, &stack, line_nb) == 1)
 		{
 			free(args);
 			free_stack(stack);
