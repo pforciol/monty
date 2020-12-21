@@ -16,7 +16,8 @@ int main(int argc, char **argv)
 
 	if (handle_input(argc, argv, &fp) == 1 || monty_run(fp) == 1)
 	{
-		fclose(fp);
+		if (fp)
+			fclose(fp);
 		exit(EXIT_FAILURE);
 	}
 	

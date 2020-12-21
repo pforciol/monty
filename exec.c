@@ -1,11 +1,24 @@
 #include "monty.h"
 
+void free_stack(stack_t *stack)
+{
+	stack_t *next;
+
+	while (stack != NULL)
+	{
+		next = stack->next;
+		free(stack);
+		stack = next;
+	}
+}
+
 int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 {
 	int i = 0;
 	instruction_t instructions[] = {
 		{"template", template},
-		{"pall", _pall},
+    {"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 
@@ -58,12 +71,14 @@ int monty_run(FILE *fp)
 		if (args[0] && monty_dispatch(args, &stack, line_nb) == EXIT_FAILURE)
 		{
 			free(args);
+			free_stack(stack);
 			free(line);
 			return (EXIT_FAILURE);
 		}
 		free(args);
 		line_nb++;
 	}
+	free_stack(stack);
 	free(line);
 	return (EXIT_SUCCESS);
 }
