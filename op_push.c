@@ -72,11 +72,19 @@ stack_t *add_dnodeint_end(stack_t **head, const int n)
 	return (new);
 }
 
+/**
+ * _push - adds a value at top (if in STACK mode)
+ * or bottom (if in QUEUE mode) of stack
+ *
+ * @stack: the program stack
+ * @line_nb: the line number
+ * @a_value: value to add to stack
+ */
 
 void _push(stack_t **stack, unsigned int line_nb, char *a_value)
 {
 	size_t i = 0;
-	
+
 	while (a_value && a_value[i])
 	{
 		if (isdigit(a_value[i]) || (a_value[i] == '-' && strlen(a_value) > 1))

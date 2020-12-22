@@ -10,11 +10,11 @@
     >[                  While c1 is not null
         -               Decrement c1
         >+              Forward to c2 and increment
-        >+              Forward to c3 aand increment
+        >+              Forward to c3 and increment
     <<]                 Back to c1 and loop
     >[                  Forward to c2 and while c2 is not null
         -               Decrement c2
-        <+              Back to c1 and increment c1
+        <+              Back to c1 and increment c1 (this transfers c2 back to c1)
     >]                  Back to c2 and loop
     <<-                 Back to c1 and decrement c1
 ]                       Loop

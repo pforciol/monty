@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * free_stack - frees the stack after runtime
+ *
+ * @stack: the program stack
+ */
+
 void free_stack(stack_t *stack)
 {
 	stack_t *next;
@@ -11,6 +17,16 @@ void free_stack(stack_t *stack)
 		stack = next;
 	}
 }
+
+/**
+ * monty_dispatch - selects the correct function to call
+ *
+ * @args: the array of args
+ * @stack: the program stack
+ * @line_nb: the line number
+ *
+ * Return: EXIT_SUCCESS if success, EXIT_FAILURE if failure
+ */
 
 int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 {
@@ -54,6 +70,14 @@ int monty_dispatch(char **args, stack_t **stack, unsigned int line_nb)
 	META.error = 1;
 	return (EXIT_FAILURE);
 }
+
+/**
+ * monty_run - main interpreter loop
+ *
+ * @fp: file pointer to monty bytecode file
+ *
+ * Return: EXIT_SUCCESS if success, EXIT_FAILURE if failure
+*/
 
 int monty_run(FILE *fp)
 {

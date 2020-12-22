@@ -4,8 +4,8 @@
  * handle_input - handles the file given as path, and sets fd
  * @argc: the amount of arguments given to the program
  * @argv: the array of arguments given to the program
- * @fd: the file descriptor to set
- * 
+ * @fp: the file descriptor to set
+ *
  * Return: 0 on success, otherwise EXIT_FAILURE
  */
 
@@ -26,6 +26,15 @@ int handle_input(int argc, char **argv, FILE **fp)
 	return (0);
 }
 
+/**
+ * handle_line - handles and tokenizes the line read from file
+ *
+ * @line: the line to tokenize
+ *
+ * Return: tokens as an array of strings
+ */
+
+
 char **handle_line(char *line)
 {
 	int i = 0, wc = 0, in = 0;
@@ -42,7 +51,7 @@ char **handle_line(char *line)
 		}
 		i++;
 	}
-	
+
 	args = malloc(sizeof(char *) * (wc + 1));
 	if (!args)
 		return (NULL);
@@ -54,6 +63,13 @@ char **handle_line(char *line)
 	return (args);
 }
 
+/**
+ * free_args - frees the argument tokens array
+ *
+ * @args: array of tokens
+ */
+
+
 void free_args(char **args)
 {
 	int i = 0;
@@ -64,6 +80,14 @@ void free_args(char **args)
 		i++;
 	}
 }
+
+/**
+ * _math - performs all math operations
+ *
+ * @stack: the program stack
+ * @op: operator
+ */
+
 
 void _math(stack_t **stack, char op)
 {
@@ -90,7 +114,7 @@ void _math(stack_t **stack, char op)
 		else
 			res = (*stack)->next->n % (*stack)->n;
 	}
-	
+
 	if (META.error == 1)
 		return;
 

@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * _pop - deletes the node at the top of the stack
+ *
+ * @stack: the program stack
+ * @line_nb: the line number
+ */
+
 void _pop(stack_t **stack, unsigned int line_nb)
 {
 	stack_t *tmp;
@@ -18,9 +25,16 @@ void _pop(stack_t **stack, unsigned int line_nb)
 	}
 }
 
+/**
+ * _swap - swaps the first two at the top of the stack
+ *
+ * @stack: the program stack
+ * @line_nb: the line number
+ */
+
 void _swap(stack_t **stack, unsigned int line_nb)
 {
-	 int tmp = 0;
+	int tmp = 0;
 
 	if (!*stack || !stack || !(*stack)->next)
 	{
@@ -29,7 +43,6 @@ void _swap(stack_t **stack, unsigned int line_nb)
 	}
 	else
 	{
-		
 		tmp = (*stack)->n;
 		(*stack)->n = (*stack)->next->n;
 		(*stack)->next->n = tmp;
