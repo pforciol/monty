@@ -87,21 +87,12 @@ void _pchar(stack_t **stack, unsigned int line_nb)
 void _pstr(stack_t **stack, unsigned int line_nb)
 {
 	stack_t *cur = *stack;
+	(void)line_nb;
 
-	if (!*stack || !stack)
+	while (cur && (cur->n > 0 && cur->n <= 127))
 	{
-		fprintf(stderr, "L%d: can't pstr, stack empty\n", line_nb);
-		META.error = 1;
+		printf("%c", cur->n);
+		cur = cur->next;
 	}
-	else
-	{
-		while (cur)
-		{
-			if ((cur->n <= 0 || cur->n > 127))
-				break;
-			printf("%c", cur->n);
-			cur = cur->next;
-		}
-		printf("\n");
-	}
+	printf("\n");
 }
