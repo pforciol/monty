@@ -88,6 +88,5 @@ void _math(stack_t **stack, char op);
 
 /* DEBUG */
 void debug(char **args, int line_nb);
-void template(stack_t **stack, unsigned int line_nb);
 
 #endif /* MONTY_H */
