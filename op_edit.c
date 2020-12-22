@@ -23,6 +23,12 @@ void _pop(stack_t **stack, unsigned int line_nb)
 		free(*stack);
 		*stack = tmp;
 	}
+	else
+	{
+		free(*stack);
+		*stack = NULL;
+	}
+	
 }
 
 /**
